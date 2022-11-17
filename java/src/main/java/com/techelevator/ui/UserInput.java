@@ -45,6 +45,9 @@ public class UserInput
         }
 
     }
+    public static String getPurchaseOption(){
+     return null;
+    }
 
     
 }
