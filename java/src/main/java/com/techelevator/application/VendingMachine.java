@@ -25,9 +25,13 @@ public class VendingMachine {
 
                 if (choice.equals("display")) {
                     // display the vending machine slots
-                    System.out.println(list);
+                    for (Items itemItems : list){
+                        System.out.println(itemItems);
+                    }
+
                 } else if (choice.equals("purchase")) {
                     // make a purchase
+                    purchase(list);
                 } else if (choice.equals("exit")) {
                     // good bye
                     break;
@@ -73,5 +77,8 @@ public class VendingMachine {
             e.printStackTrace();
         }
         return inventoryList;
+    }
+    public void purchase(List<Items> ItemList){
+
     }
 }
