@@ -9,13 +9,24 @@ public abstract class Items {
     private String name;
     BigDecimal price;
     String type;
+    private int quantity;
 
-    public Items(String slot, String name, BigDecimal price, String type){
+    public Items(int quantity, String slot, String name, BigDecimal price, String type){
+
         this.slot = slot;
         this.name = name;
         this.price = price;
         this.type = type;
+        this.quantity = quantity;
 
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getSlot() {
@@ -50,4 +61,8 @@ public abstract class Items {
         this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return quantity + "" + " " + name + " " + price + " " + type;
+    }
 }
