@@ -4,16 +4,16 @@ import com.techelevator.models.*;
 import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
 
-import javax.sound.sampled.Line;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class VendingMachine {
+
+    private int balance = 0;
 
     public void run() {
       List<Items> list = readFile();
@@ -42,6 +42,7 @@ public class VendingMachine {
 
     public List<Items> readFile() {
         List<Items> inventoryList = new ArrayList<>();
+        // taking a list of the inventory and making an Array
         File inventory = new File("catering1.csv");
         if (!inventory.exists()) {
             System.out.println("Error reading file");
@@ -79,6 +80,23 @@ public class VendingMachine {
         return inventoryList;
     }
     public void purchase(List<Items> ItemList){
+        while (true){
+        String choice = UserInput.getPurchaseOption();
+            UserInput.getMoneyFeedingOption();
+            if (choice.equals("Feed Money")){
+                
+
+
+            // reference feed money method, write a new method outside of purchase methode
+            // select a while loop, userInput.getPurchase, informing the user what money they inputting
+
+
+
+            //Call a method to deal with money
+        }
+//        else if (choice.equals("Select Item")){
+//            UserOutput.Items();
+        }
 
     }
 }
