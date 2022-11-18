@@ -9,7 +9,12 @@ import java.util.Scanner;
  * Dependencies: None
  */
 public class UserInput {
+    private static BigDecimal balance = new BigDecimal(0);
     private static Scanner scanner = new Scanner(System.in);
+
+    public static BigDecimal getBalance() {
+        return balance;
+    }
 
     public static String getHomeScreenOption() {
         System.out.println("What would you like to do?");
@@ -50,31 +55,27 @@ public class UserInput {
         String option = selectedOption.trim().toUpperCase();
 
         if (option.equals("M")) {
-            return "Money";
+            return "Feed Money";
         } else if (option.equals("S")) {
             return "Select Item";
         } else if (option.equals("F")) {
-            return "Finish Transaction";
+            return "Current Money Provided: " + balance;
         } else {
             return "";
         }
 
     }
 
-    public static int getMoneyFeedingOption() {
+    public static BigDecimal moneyFeed() {
 
-        int amountFeedingA = 1;
-        int amountFeedingB = 5;
-        int amountFeedingC = 10;
-        int amountFeedingD = 20;
 
         System.out.println("Please select amount");
         System.out.println();
 
-        System.out.println("A) $1");
-        System.out.println("B) $5");
-        System.out.println("C) $10");
-        System.out.println("D) $20");
+        System.out.println("$1");
+        System.out.println("$5");
+        System.out.println("$10");
+        System.out.println("$20");
 
         System.out.println();
         System.out.print("Please select an option: ");
@@ -83,20 +84,11 @@ public class UserInput {
         String option = selectedOption.trim().toUpperCase();
 
 
-        if (option.equals("A) $1")) {
-            return amountFeedingA;
 
-        } else if (option.equals("B) $5")) {
-            return amountFeedingB;
-
-        } else if (option.equals("C) $10")) {
-            return amountFeedingC;
-
-        } else if (option.equals("D) $20")) {
-            return amountFeedingD;
+        if (option.equals("1") || option.equals("5") || option.equals("10") || option.equals("20")) {
+            balance = balance.add(BigDecimal.valueOf(Integer.parseInt(option)));
         }
-
-        return getMoneyFeedingOption();
+        return balance;
     }
 
 
