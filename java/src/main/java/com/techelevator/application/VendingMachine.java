@@ -82,10 +82,12 @@ public class VendingMachine {
     public void purchase(List<Items> ItemList){
         while (true){
         String choice = UserInput.getPurchaseOption();
-            UserInput.getMoneyFeedingOption();
-            if (choice.equals("Feed Money")){
-                
 
+            if (choice.equals("Feed Money")){
+                // sout prompt user to input money 1,5,10,50,20
+                // scanner to take in $ amount
+                // capture that into a variable to then update balance
+                UserInput.getMoneyFeedingOption();
 
             // reference feed money method, write a new method outside of purchase methode
             // select a while loop, userInput.getPurchase, informing the user what money they inputting
