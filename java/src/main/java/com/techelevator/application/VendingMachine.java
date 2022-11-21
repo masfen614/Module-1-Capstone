@@ -30,6 +30,8 @@ public class VendingMachine {
                 }
 
             } else if (choice.equals("purchase")) {
+                for( Items itemsItems : list)
+                    System.out.println(itemsItems);
                 // make a purchase
                 purchase(list);
             } else if (choice.equals("exit")) {
@@ -76,18 +78,6 @@ public class VendingMachine {
         }
         return inventoryList;
     }
-<<<<<<< HEAD
-    public void purchase(List<Items> ItemList){
-        while (true){
-        String choice = UserInput.getPurchaseOption();
-
-            if (choice.equals("Feed Money")){
-                // sout prompt user to input money 1,5,10,50,20
-                // scanner to take in $ amount
-                // capture that into a variable to then update balance
-                UserInput.getMoneyFeedingOption();
-=======
->>>>>>> 78fd5a451c9d2f9bd15812da894821a830b84731
 
     public void purchase(List<Items> ItemList) {
         while (true) {
@@ -95,14 +85,12 @@ public class VendingMachine {
 
             if (choice.equalsIgnoreCase("Feed Money")) {
                 balance = UserInput.moneyFeed();
-                System.out.println(balance);
-            } else if (choice.equalsIgnoreCase("Select Item")){
-
+                System.out.println("Current money Provided: " + "$" + balance);
+            } else if (choice.equalsIgnoreCase("Select Item")) {
+                     
 
             }
- //      else if (choice.equals("Select Item")){
- //         UserOutput.Items();
-        }
 
+        }
     }
 }

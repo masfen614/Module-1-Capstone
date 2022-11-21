@@ -84,16 +84,34 @@ public class UserInput {
         String option = selectedOption.trim().toUpperCase();
 
 
-
         if (option.equals("1") || option.equals("5") || option.equals("10") || option.equals("20")) {
             balance = balance.add(BigDecimal.valueOf(Integer.parseInt(option)));
         }
         return balance;
     }
 
+    public static String selectItem() {
+        System.out.println("Please select item");
+        System.out.println();
 
+        System.out.println("Item");
+
+
+        System.out.println();
+        System.out.println("Please select an option: ");
+
+        String selectedOption = scanner.nextLine();
+        String option = selectedOption.trim().toUpperCase();
+
+        if (option.equals("Item")) {
+
+
+        }
+        return null;
 
     }
+
+}
 
     
 
